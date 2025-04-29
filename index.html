@@ -1,113 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Goreto - Nepal Travel Companion</title>
-   <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goreto - Nepal's Smart Travel Companion</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<header>
-  <h1>GORETO</h1>
-  <p>Your essential travel companion for exploring Nepal</p>
-</header>
-
-<main>
-  <section id="features">
-    <h2>Key Features</h2>
-    <div class="card-container">
-      <div class="card" data-feature="destination-guides">
-        <h3>Destination Guides</h3>
-        <p>Discover top destinations in Nepal with detailed guides and traveler reviews</p>
-      </div>
-      <div class="card" data-feature="offline-maps">
-        <h3>Offline Maps</h3>
-        <p>Download maps for offline use in remote areas without internet access</p>
-      </div>
-      <div class="card" data-feature="custom-itineraries">
-        <h3>Custom Itineraries</h3>
-        <p>Create and share personalized travel plans based on your preferences</p>
-      </div>
-      <div class="card" data-feature="local-services">
-        <h3>Local Services</h3>
-        <p>Find and book trusted local guides, transportation, and accommodations</p>
-      </div>
-      <div class="card" data-feature="language-help">
-        <h3>Language Help</h3>
-        <p>Essential Nepali phrases and translation tools for better communication</p>
-      </div>
-      <div class="card" data-feature="emergency-info">
-        <h3>Emergency Info</h3>
-        <p>Quick access to emergency contacts, hospitals, and safety information</p>
-      </div>
-    </div>
-    <div id="feature-details" class="feature-details">
-      <h3 id="feature-title">Feature Details</h3>
-      <p id="feature-description">Click on any feature card to see detailed information</p>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <p>&copy; 2025 Goreto App | Made with ❤️ for travelers in Nepal</p>
-</footer>
-
-<script>
-  // script.js
-  document.addEventListener('DOMContentLoaded', function() {
-    const cards = document.querySelectorAll('.card');
-    const featureDetails = document.getElementById('feature-details');
-    const featureTitle = document.getElementById('feature-title');
-    const featureDescription = document.getElementById('feature-description');
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon">🗻</span>
+                <span>Goreto</span>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle">☰</button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li><a href="#download" class="nav-link">Download</a></li>
+            </ul>
+        </div>
+    </header>
     
-    const featureData = {
-      'destination-guides': {
-        title: 'Destination Guides',
-        description: 'Our comprehensive guides cover everything from popular spots like Kathmandu and Pokhara to hidden gems in the Himalayas. Get insider tips on best times to visit, cultural norms, and must-see attractions for each location.'
-      },
-      'offline-maps': {
-        title: 'Offline Maps',
-        description: 'Download detailed maps of cities, trekking routes, and points of interest before your trip. Works without internet connection, perfect for remote areas. Includes elevation data and important landmarks.'
-      },
-      'custom-itineraries': {
-        title: 'Custom Itineraries',
-        description: 'Build your perfect trip with our itinerary planner. Select your interests (trekking, culture, adventure), available time, and budget. Get suggestions and automatically optimize your route between destinations.'
-      },
-      'local-services': {
-        title: 'Local Services',
-        description: 'Connect with verified local service providers including guides, homestays, and transportation. Read reviews from other travelers and book directly through the app with secure payments.'
-      },
-      'language-help': {
-        title: 'Language Help',
-        description: 'Learn essential Nepali phrases with audio pronunciation. Use our instant translation tool for menus, signs, and basic conversations. Cultural tips included to help you communicate effectively.'
-      },
-      'emergency-info': {
-        title: 'Emergency Information',
-        description: 'Quick access to emergency numbers, nearby hospitals, police stations, and your country\'s embassy. Includes altitude sickness information and safety tips for trekking and travel in Nepal.'
-      }
-    };
-
-    cards.forEach(card => {
-      card.addEventListener('click', function() {
-        const feature = this.getAttribute('data-feature');
-        const data = featureData[feature];
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Your Personal Nepal Travel Guide</h1>
+                <p>Discover the Himalayas with real-time navigation, personalized recommendations, and seamless booking - all in one app</p>
+                <a href="#download" class="cta-button">Get Started</a>
+            </div>
+        </section>
         
-        featureTitle.textContent = data.title;
-        featureDescription.textContent = data.description;
+        <section class="section" id="features">
+            <h2 class="section-title">Why Choose Goreto?</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧭</div>
+                    <h3>Smart Navigation</h3>
+                    <p>Real-time GPS with offline maps for remote areas in the Himalayas</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🌟</div>
+                    <h3>Personalized Recommendations</h3>
+                    <p>AI-powered suggestions for activities, dining, and accommodations</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🏨</div>
+                    <h3>Seamless Booking</h3>
+                    <p>Reserve hotels, tours, and transportation directly in the app</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🍴</div>
+                    <h3>Food Explorer</h3>
+                    <p>Discover and book authentic Nepali dining experiences</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🗣️</div>
+                    <h3>Cultural Insights</h3>
+                    <p>Language help and local etiquette guides</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🆘</div>
+                    <h3>Emergency Support</h3>
+                    <p>Quick access to essential contacts and safety information</p>
+                </div>
+            </div>
+        </section>
         
-        // Highlight selected card
-        cards.forEach(c => c.style.border = 'none');
-        this.style.border = `2px solid ${getComputedStyle(document.documentElement).getPropertyValue('--accent-color')}`;
+        <section class="app-preview" id="how-it-works">
+            <div class="preview-container">
+                <div class="preview-text">
+                    <h2>How Goreto Works</h2>
+                    <p>Our intuitive interface makes exploring Nepal effortless:</p>
+                    <ol style="margin-top: 1rem; margin-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;">Set your travel preferences</li>
+                        <li style="margin-bottom: 0.5rem;">Receive personalized recommendations</li>
+                        <li style="margin-bottom: 0.5rem;">Book services directly in the app</li>
+                        <li style="margin-bottom: 0.5rem;">Navigate with offline maps</li>
+                        <li>Share your experiences with the community</li>
+                    </ol>
+                </div>
+                <div class="preview-image">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Goreto app interface">
+                </div>
+            </div>
+        </section>
         
-        // Show details section
-        featureDetails.style.display = 'block';
-      });
-    });
-
-    // Initialize with first feature
-    cards[0].click();
-  });
-</script>
+        <section class="section testimonials" id="testimonials">
+            <h2 class="section-title">What Travelers Say</h2>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Goreto completely transformed my Nepal trip. The offline maps saved me multiple times in remote areas!"</p>
+                    <p class="testimonial-author">- Sarah K., Australia</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The restaurant recommendations were spot on - I discovered hidden gems I'd never find otherwise."</p>
+                    <p class="testimonial-author">- Rajiv P., India</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"As a solo female traveler, I felt much safer with Goreto's emergency features and local guides."</p>
+                    <p class="testimonial-author">- Maria L., Spain</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="download-cta" id="download">
+            <h2>Ready to Explore Nepal?</h2>
+            <p>Download Goreto now and start your personalized adventure</p>
+            
+            <div class="download-buttons">
+                <a href="#" class="download-btn">
+                    <span>📱</span>
+                    <span>App Store</span>
+                </a>
+                <a href="#" class="download-btn">
+                    <span>📱</span>
+                    <span>Google Play</span>
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">Goreto</div>
+                <p>Your personal guide to exploring Nepal's rich culture and breathtaking landscapes.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">📘</a>
+                    <a href="#" class="social-link">📸</a>
+                    <a href="#" class="social-link">🐦</a>
+                    <a href="#" class="social-link">📹</a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Features</h3>
+                <ul>
+                    <li><a href="#">Navigation</a></li>
+                    <li><a href="#">Booking</a></li>
+                    <li><a href="#">Dining</a></li>
+                    <li><a href="#">Cultural Guides</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 Goreto. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>
