@@ -2,59 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GORETO</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Goreto</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <header>
-    <div class="logo">GORETO</div>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>Explore Nepal with Goreto</h1>
-      <p>Your trusted travel guide for unforgettable experiences</p>
-      <a href="#services" class="cta-btn">Discover More</a>
+<header>
+  <h1>Goreto</h1>
+  <p>Your travel companion for exploring Nepal</p>
+</header>
+
+<main>
+  <section id="features">
+    <h2>Key Features</h2>
+    <div class="card-container">
+      <div class="card" data-feature="destination-guides">
+        <h3>Destination Guides</h3>
+        <p>Discover top destinations in Nepal</p>
+      </div>
+      <div class="card" data-feature="offline-maps">
+        <h3>Offline Maps</h3>
+        <p>Access maps even without internet</p>
+      </div>
+      <div class="card" data-feature="custom-itineraries">
+        <h3>Custom Itineraries</h3>
+        <p>Create your personalized travel plan</p>
+      </div>
+      <div class="card" data-feature="local-services">
+        <h3>Local Services</h3>
+        <p>Find local services and businesses</p>
+      </div>
+      <div class="card" data-feature="language-help">
+        <h3>Language Help</h3>
+        <p>Break language barriers easily</p>
+      </div>
+      <div class="card" data-feature="emergency-info">
+        <h3>Emergency Info</h3>
+        <p>Stay safe with emergency contact info</p>
+      </div>
+    </div>
+    <div id="feature-details" class="feature-details">
+      <h3 id="feature-title"></h3>
+      <p id="feature-description"></p>
     </div>
   </section>
+</main>
 
-  <!-- Services Section -->
-  <section id="services" class="services">
-    <h2>Our Services</h2>
-    <div class="service-card">
-      <h3>Booking</h3>
-      <p>Book your travel experiences with ease.</p>
-    </div>
-    <div class="service-card">
-      <h3>Guided Tours</h3>
-      <p>Explore Nepal with expert guides.</p>
-    </div>
-    <div class="service-card">
-      <h3>Transport</h3>
-      <p>Seamless transportation to every destination.</p>
-    </div>
-  </section>
+<footer>
+  <p>&copy; 2025 Goreto App</p>
+</footer>
 
-  <!-- Footer Section -->
-  <footer>
-    <p>&copy; 2025 Goreto. All Rights Reserved.</p>
-  </footer>
+<script src="script.js"></script>
 </body>
 </html>
