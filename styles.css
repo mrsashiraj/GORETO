@@ -281,4 +281,39 @@ copyright {
   .nav-links.active {
     display: flex;
   }
+  .preview-gallery-with-reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 2rem;
+}
+
+.gallery-item {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.review-text {
+  padding: 0.5rem 1rem 0;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #444;
+}
+
+.stars {
+  color: gold;
+  font-size: 1.2rem;
+  margin-top: 0.3rem;
+}
+
 }
