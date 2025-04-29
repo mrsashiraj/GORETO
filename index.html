@@ -3,14 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Goreto</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Goreto - Nepal Travel Companion</title>
+  <style>
+    /* styles.css */
+    :root {
+      --primary-color: #4a6fa5;
+      --secondary-color: #166088;
+      --accent-color: #4fc3f7;
+      --light-color: #f8f9fa;
+      --dark-color: #343a40;
+      --success-color: #28a745;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--light-color);
+      color: var(--dark-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--secondary-color);
+      font-size: 2rem;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .card h3 {
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-details {
+      background: white;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+      display: none;
+    }
+
+    .feature-details h3 {
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    footer {
+      background-color: var(--dark-color);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .card-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
   <h1>Goreto</h1>
-  <p>Your travel companion for exploring Nepal</p>
+  <p>Your essential travel companion for exploring Nepal</p>
 </header>
 
 <main>
@@ -19,40 +124,95 @@
     <div class="card-container">
       <div class="card" data-feature="destination-guides">
         <h3>Destination Guides</h3>
-        <p>Discover top destinations in Nepal</p>
+        <p>Discover top destinations in Nepal with detailed guides and traveler reviews</p>
       </div>
       <div class="card" data-feature="offline-maps">
         <h3>Offline Maps</h3>
-        <p>Access maps even without internet</p>
+        <p>Download maps for offline use in remote areas without internet access</p>
       </div>
       <div class="card" data-feature="custom-itineraries">
         <h3>Custom Itineraries</h3>
-        <p>Create your personalized travel plan</p>
+        <p>Create and share personalized travel plans based on your preferences</p>
       </div>
       <div class="card" data-feature="local-services">
         <h3>Local Services</h3>
-        <p>Find local services and businesses</p>
+        <p>Find and book trusted local guides, transportation, and accommodations</p>
       </div>
       <div class="card" data-feature="language-help">
         <h3>Language Help</h3>
-        <p>Break language barriers easily</p>
+        <p>Essential Nepali phrases and translation tools for better communication</p>
       </div>
       <div class="card" data-feature="emergency-info">
         <h3>Emergency Info</h3>
-        <p>Stay safe with emergency contact info</p>
+        <p>Quick access to emergency contacts, hospitals, and safety information</p>
       </div>
     </div>
     <div id="feature-details" class="feature-details">
-      <h3 id="feature-title"></h3>
-      <p id="feature-description"></p>
+      <h3 id="feature-title">Feature Details</h3>
+      <p id="feature-description">Click on any feature card to see detailed information</p>
     </div>
   </section>
 </main>
 
 <footer>
-  <p>&copy; 2025 Goreto App</p>
+  <p>&copy; 2025 Goreto App | Made with ❤️ for travelers in Nepal</p>
 </footer>
 
-<script src="script.js"></script>
+<script>
+  // script.js
+  document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.card');
+    const featureDetails = document.getElementById('feature-details');
+    const featureTitle = document.getElementById('feature-title');
+    const featureDescription = document.getElementById('feature-description');
+    
+    const featureData = {
+      'destination-guides': {
+        title: 'Destination Guides',
+        description: 'Our comprehensive guides cover everything from popular spots like Kathmandu and Pokhara to hidden gems in the Himalayas. Get insider tips on best times to visit, cultural norms, and must-see attractions for each location.'
+      },
+      'offline-maps': {
+        title: 'Offline Maps',
+        description: 'Download detailed maps of cities, trekking routes, and points of interest before your trip. Works without internet connection, perfect for remote areas. Includes elevation data and important landmarks.'
+      },
+      'custom-itineraries': {
+        title: 'Custom Itineraries',
+        description: 'Build your perfect trip with our itinerary planner. Select your interests (trekking, culture, adventure), available time, and budget. Get suggestions and automatically optimize your route between destinations.'
+      },
+      'local-services': {
+        title: 'Local Services',
+        description: 'Connect with verified local service providers including guides, homestays, and transportation. Read reviews from other travelers and book directly through the app with secure payments.'
+      },
+      'language-help': {
+        title: 'Language Help',
+        description: 'Learn essential Nepali phrases with audio pronunciation. Use our instant translation tool for menus, signs, and basic conversations. Cultural tips included to help you communicate effectively.'
+      },
+      'emergency-info': {
+        title: 'Emergency Information',
+        description: 'Quick access to emergency numbers, nearby hospitals, police stations, and your country\'s embassy. Includes altitude sickness information and safety tips for trekking and travel in Nepal.'
+      }
+    };
+
+    cards.forEach(card => {
+      card.addEventListener('click', function() {
+        const feature = this.getAttribute('data-feature');
+        const data = featureData[feature];
+        
+        featureTitle.textContent = data.title;
+        featureDescription.textContent = data.description;
+        
+        // Highlight selected card
+        cards.forEach(c => c.style.border = 'none');
+        this.style.border = `2px solid ${getComputedStyle(document.documentElement).getPropertyValue('--accent-color')}`;
+        
+        // Show details section
+        featureDetails.style.display = 'block';
+      });
+    });
+
+    // Initialize with first feature
+    cards[0].click();
+  });
+</script>
 </body>
 </html>
